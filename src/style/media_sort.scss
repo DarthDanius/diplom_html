@@ -1,0 +1,474 @@
+//section general
+
+@media (max-width: 1200px) {
+
+  .btn_orang {
+    width: 319px;
+    height: 68px;
+  }  
+
+}
+
+@media (max-width: 460px) {
+
+  .fixed-conteiner{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .title-section {
+    font-size: 30px;
+  }
+
+  .btn_orang {
+    width: 280px;
+    height: 55px;
+    margin-top: 23px;
+    font-size: 16px;
+  }
+
+}
+
+//section header
+
+@media (max-width: 1406px) {
+  .section-aboutmy__avatar {
+    right: 2.5%;
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .header-main__btn-nav {
+    display: inline-block;
+  }
+
+  .header-main__nav {
+    display: none;
+  }
+
+  .header-main__btn-tel {
+    margin-left: 3%;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .header-main__wrap {
+    justify-content: space-between;
+  }
+
+  .header-main__link-tel {
+    margin-left: 0;
+  }
+
+  .header-main__btn-tel{
+    display: none;
+  }
+  
+  .header-main__btn-tel-circle {
+    display: block;
+  }
+
+}
+
+@media (max-width: 460px) {
+
+  .header-main__wrap {
+    padding-top: 26px;
+  }
+
+  .header-main__link-tel {
+    font-size: 18px;
+  }
+
+  .header-main__btn-nav {
+    width: 24px;
+    height: 18px;
+  }
+
+  .header-main__btn-tel-circle {
+    width: 26px;
+    height: 26px;
+  }
+
+}
+
+//section about-me
+
+@media (max-width: 1200px) {
+
+  .section-aboutmy__wrap {
+    padding-bottom: 230px;
+  }  
+
+  .section-aboutmy__bg-text svg:nth-of-type(1) {
+    left: 112px;
+  }
+
+  .section-aboutmy__bg-text svg:nth-of-type(5) {
+    left: 430px;
+  }
+
+  .section-aboutmy__figure {
+    transform: scale(1, 0.83) translateY(10.2%);
+    right: -26%;
+  }
+
+  .section-aboutmy__title {
+    margin-top: 10px;
+    font-size: 54px;
+  }
+
+  .section-aboutwork__list {
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 257px 277px;
+    grid-column-gap: 120px;
+    grid-row-gap: 78px;
+  }
+
+}
+
+@media (max-width: 1024px) {
+
+  .section-aboutmy__bg-text svg:nth-of-type(1) {
+    left: 92px;
+    top: 74px;
+  }
+
+  .section-aboutmy__bg-text svg:nth-of-type(2) {
+    left: 71px;
+    top: 551px;
+  }
+
+  .section-aboutmy__bg-text svg:nth-of-type(3) {
+    left: 377px;
+    top: 497px;
+  }
+
+  .section-aboutmy__bg-text svg:nth-of-type(4) {
+    left: 904px;
+    top: 55px;
+  }
+
+  .section-aboutmy__bg-text svg:nth-of-type(5) {
+    display: none;
+  }
+
+  .section-aboutmy__bg-text svg:nth-of-type(6) {
+    display: block;
+  }
+
+}
+
+@media (max-width: 980px) {
+
+  .section-aboutmy__wrap {
+    display: flex;
+    flex-direction: column;
+    padding-top: 57px;
+  }
+
+  .section-aboutmy__bg-image {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .section-aboutmy__figure {
+    transform-origin: center bottom;
+    transform: scaleY(.95) translateX(-20px);
+    width: 124.4vw;
+    height: auto;
+    min-width: 398px;
+    max-width: 812px;
+  }
+
+  .section-aboutmy__avatar {
+    position: static;
+    padding: 0 0 0 52px;
+    vertical-align: bottom;
+  }
+
+}
+
+@media (max-width: 460px) {
+
+  .section-aboutmy__wrap {
+    text-align: center;
+    padding-bottom: 0;
+  }
+
+  .section-aboutmy__title {
+    margin-top: 16px;    
+    line-height: 32px;
+  }
+
+  .section-aboutmy__title span{
+    font-size: 16px;
+    line-height: 24px;
+    display: block;
+    margin-top: 9px;
+  }
+
+  .section-aboutmy__btn {
+    align-self: center;
+  }
+
+}
+
+//about work
+
+@media (max-width: 1024px) {
+
+  .section-aboutwork__wrap {
+    padding-top: 84px;
+  }
+
+  .section-aboutwork__btn {
+    margin-top: 93px;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .section-aboutwork__list {
+    grid-template-columns: 1fr;
+    margin-top: 44px;
+    grid-row-gap: 50px;
+  }
+
+}
+
+@media (max-width: 460px) {
+
+  .section-aboutwork__wrap {
+    padding-top: 43px;
+    padding-bottom: 0;
+  }
+
+  .service-list__item p {
+    font-size: 16px;
+    margin-top: 13px;
+    line-height: 25px;
+    width: 80%;
+  }
+
+  .service-list__item svg {
+    height: auto;
+  }
+
+  .service-list li:nth-of-type(1) svg,
+  .service-list li:nth-of-type(2) svg {
+    width: 59px;
+  }
+
+  .service-list li:nth-of-type(3) svg,
+  .service-list li:nth-of-type(4) svg {
+    width: 60px;
+  }
+
+  .section-aboutwork__btn {
+    margin-top: 50px;
+  }
+
+}
+
+//section mywork
+
+@media (max-width: 1024px) {
+
+  .section-mywork__slider-wrap {
+    margin-top: 84px;
+    font-size: 25px;
+  }
+
+  .section-mywork__slider {
+    margin-bottom: 85px;
+  }
+
+  .slider__image-cont {
+    margin-bottom: 18px;
+    height: 360px;
+  }
+
+  .section-mywork__btn {
+    margin-top: 100px;
+  }
+
+}
+
+@media (max-width: 460px) {
+
+  .section-mywork__wrap {
+    padding-top: 90px;
+    padding-bottom: 0;
+  }
+
+  .section-mywork__slider-wrap {
+    margin-top: 25px;
+  }
+
+  .section-mywork__slider {
+    margin-bottom: 29px;
+  }
+
+  .slider__slide {
+    padding-right: 0;
+    padding-left: 0;
+    font-size: 18px;
+  }
+
+  .slider__image-cont {
+    height: 250px;
+  }
+
+  .slider__image-cont img {
+    object-fit: cover;
+  }
+
+  .section-mywork__slider-wrap [data-type="hendler-cont"] li {
+    height: 10px;
+    width: 10px;
+    margin: 0 8px;
+  }
+
+  .section-mywork__btn {
+    margin-top: 50px;
+  }
+
+}
+
+//section promo
+
+@media (max-width: 1024px) {
+
+  .promo__wrap {
+    padding: 74px 40px 81px 40px;
+  }
+
+}
+
+@media (max-width: 460px) {
+
+  .promo {
+    margin-top: 51px;
+  }
+
+  .promo__wrap {
+    padding-top: 41px;
+    padding-bottom: 45px;
+  }
+
+  .promo__text {
+    font-size: 28px;
+    line-height: 40px;
+  }
+
+  .promo__note {
+    font-size: 15px;
+    line-height: 30px;
+    padding-right: 0;
+  }
+
+  .promo__note::before {
+    font-size: 20px;
+  }
+
+}
+
+//section footer-body
+
+@media (max-width: 1024px) {
+
+  .footer-body__wrap {
+    padding: 100px 38px 79px 40px;
+  }
+
+  .footer-body__col-2 {
+    padding-left: 54px;
+  }
+
+}
+
+@media (max-width: 460px) {
+
+  .footer-body__wrap {
+    padding-top: 40px;
+    padding-bottom: 48px;
+    flex-direction: column;
+  }
+
+  .footer-body__col-1 {
+    font-size: 15px;
+  }
+
+  .footer-body__col-1 li:not(:first-of-type) {
+    margin-top: 15px;
+  }
+
+  .footer-body__col-2 {
+    font-size: 20px;
+    padding-left: 0;
+    margin-top: 42px;
+  }
+
+  .footer-body__phon svg {
+    width: 12px;
+    height: auto;
+  }
+
+  .footer-body__phon {
+    letter-spacing: 0.4px;
+  }
+  .footer-body__mail {
+    margin-top: 22px;
+  }
+
+  .footer-body__mail svg {
+    height: auto;
+    width: 14px;
+  }
+
+  .footer-body__col-3 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-body__btn {
+    margin-top: 25px;
+    font-size: 16px;
+    height: 55px;
+    width: 280px;
+    color: #fff;
+    letter-spacing: .5px;
+    background-color: #ff4e2e;
+    border: 0;
+    align-self: center;
+  }
+  .footer-body__btn:hover {
+    box-shadow: 0 0 8px 3px rgba(255, 78, 46, .5);
+    background-color: #ff4e2e;
+  }
+
+  .footer-body__icons-social {
+    margin-top: 45px;
+  }
+
+}
+
+//section footer-bar
+
+@media (max-width: 460px) {
+
+  .footer-bar__wrap {
+    padding-top: 18px;
+  }
+
+  .footer-bar__text {
+    font-size: 12px;
+  }
+
+}

@@ -1,0 +1,25 @@
+$color-pink: #ff2f96;
+$color-orange: #FF4E2E;
+$color-white: white;
+$color-gray: #8993AD;
+$time-slide: 250ms;
+$time-hover: 250ms;
+$time-btn-nav: 200ms;
+
+@mixin transition-hover {
+  transition-property: background-color, box-shadow, border-color, outline-color;
+  transition-duration: $time-hover;
+}
+
+@mixin transition-message {
+  transition-property: margin, height, opacity;
+  transition-duration: 250ms;
+}
+
+@mixin transition-btn-nav {
+  transition-property: transform, opacity;
+  transition-duration: $time-btn-nav;
+}
+
+// @include transition-hover;
+// @include transition-message;

@@ -1,0 +1,38 @@
+.slideDown {
+  transform-origin: top;
+  animation-name: slideDown;
+  animation-duration: 250ms;
+  // animation-timing-function: linear;
+  // animation-delay: 0ms;
+  // animation-iteration-count: infinite;
+  // animation-direction: normal;
+  animation-fill-mode: forwards;
+  // animation-play-state: running;
+}
+
+.slideUp {
+  transform-origin: top;
+  animation-name: slideUp;
+  animation-duration: 250ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-50%) scaleY(0);
+    // top:0;
+  }
+  to {
+    transform: translateY(0) scaleY(1);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(0) scaleY(1);
+    // top:0;
+  }
+  to {
+    transform: translateY(-50%) scaleY(0);
+  }
+}

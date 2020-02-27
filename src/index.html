@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#2b5797">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>Document</title>
+</head>
+<body>
+
+  <div class="content">
+  <header class="header-main">
+    <div class="header-main__wrap fixed-conteiner">
+      <button class="header-main__btn-nav btn-nav" type="button">
+        <!-- <object class="svg" aria-hidden="true" focusable="false" type="image/svg+xml" data="img/icons.svg#icon-nav"></object> -->
+        <!-- <svg class="svg" aria-hidden="true" focusable="false"><use xlink:href="img/icons.svg#icon-nav"></use></svg> -->
+        <svg xmlns='http://www.w3.org/2000/svg' class="svg" aria-hidden="true" focusable="false" viewBox="0 0 145 103">
+          <g id="icon-nav" class="svg__icons">
+            <polygon class="fil0" points="0,85 0,103 145,103 145,85 "/>
+            <polygon class="fil1" points="0,43 0,61 145,61 145,43 "/>
+            <polygon class="fil2" points="145,0 0,0 0,18 145,18 "/>
+          </g>
+        </svg>
+      </button>
+      <nav class="header-main__nav nav-main">
+        <ul class="nav-main__list">
+          <li class="nav-main__item"><a href="#">Услуги</a></li>
+          <li class="nav-main__item nav-main__item_current"><a href="#">Портфолио</a></li>
+          <li class="nav-main__item"><a href="#">Стоимость</a></li>
+        </ul>
+      </nav>
+      <a class="header-main__link-tel" href="tel:+74999955577">+7 (499) 995-55-77</a>
+      <button class="header-main__btn-tel btn_white" type="button" data-action="getform-[name, phone]" id="call-request">
+        <svg class="svg" aria-hidden="true" focusable="false" viewBox="0 0 0.91 0.91"><use xlink:href="img/icons.svg#icon-phone_circle" clip-path="url(#clipPath-1)"></use></svg>
+        <span>Заказать звонок</span>
+      </button>
+    </div>
+  </header>
+
+  <section class="section-aboutmy">
+    <div class="section-aboutmy__wrap fixed-conteiner">
+      <div class="section-aboutmy__bg-text">
+        <svg class="svg" width="14px" height="15px" aria-hidden="true" focusable="false"><use xlink:href="img/bg.svg#bg-char-1"></use></svg>
+        <svg class="svg" width="9px"  height="11px" aria-hidden="true" focusable="false"><use xlink:href="img/bg.svg#bg-char-2"></use></svg>
+        <svg class="svg" width="21px" height="12px" aria-hidden="true" focusable="false"><use xlink:href="img/bg.svg#bg-char-3"></use></svg>
+        <svg class="svg" width="37px" height="12px" aria-hidden="true" focusable="false"><use xlink:href="img/bg.svg#bg-char-4"></use></svg>
+        <svg class="svg" width="37px" height="12px" aria-hidden="true" focusable="false"><use xlink:href="img/bg.svg#bg-char-4"></use></svg>
+        <svg class="svg" width="21px" height="12px" aria-hidden="true" focusable="false"><use xlink:href="img/bg.svg#bg-char-3"></use></svg>
+      </div>
+      <div class="section-aboutmy__bg-image">
+        <svg class="section-aboutmy__figure svg" viewBox="0 0 14384 11142" aria-hidden="true" focusable="false"><use xlink:href="img/bg.svg#bg-figure-1"></use></svg>
+        <img class="section-aboutmy__avatar" src="img/bg-avatar-no-shadow.png" alt="avatar">
+      </div>
+      <h1 class="section-aboutmy__title title-section" >Дмитрий Алексеев<br><span>Frontend разработчик и веб-верстальщик</span></h1>
+      <button class="section-aboutmy__btn btn_orang" type="button" data-action="getform-[name, phone, email]">Узнать больше</button>
+    </div>
+  </section>
+
+  <!-- <form id="test-form" class="form" action="#">
+    <input type="text" name="name" class="form__input-text form__input-text_name" placeholder="имя" required="required">
+    <input type="tel" name="phone" class="form__input-text form__input-text_phone" placeholder="телефон" required="required">
+    <textarea name="textarea" class="form__textarea" placeholder="..." required="true"></textarea>
+    <input type="email" name="email" class="form__input-text form__input-text_email" placeholder="e-mail" required="required">
+    <input type="submit" class="form__btn btn_orang" value="Узнать больше">
+  </form> -->
+
+  <section class="section-aboutwork">
+    <div class="section-aboutwork__wrap fixed-conteiner">
+      <h2 class="section-aboutwork__title title-section">Что я делаю</h2>
+      <ul class="section-aboutwork__list service-list">
+        <li class="service-list__item">
+          <svg class="svg" width="79px" height="73px" viewBox="0 0 883 817" aria-hidden="true" focusable="false"><use xlink:href="img/icons.svg#icon-1"></use></svg>
+          <p>Вёрстка лендинг&ndash;страниц и&nbsp;сайтов любой сложности</p>
+        </li>
+        <li class="service-list__item">
+          <svg class="svg" width="79px" height="75px" viewBox="0 0 856 813" aria-hidden="true" focusable="false"><use xlink:href="img/icons.svg#icon-2"></use></svg>
+          <p>Адаптивная вёрстка под все браузеры и&nbsp;устройства</p>
+        </li>
+        <li class="service-list__item">
+          <svg class="svg" width="74px" height="74px" viewBox="0 0 730 729" aria-hidden="true" focusable="false"><use xlink:href="img/icons.svg#icon-3"></use></svg>
+          <p>Frontend&ndash;разработка и&nbsp;программирование</p>
+        </li>
+        <li class="service-list__item">
+          <svg class="svg" width="74px" height="73px" viewBox="0 0 709 708" aria-hidden="true" focusable="false"><use xlink:href="img/icons.svg#icon-4"></use></svg>
+          <p>Исправление и&nbsp;доработка существующей верстки</p>
+        </li>
+      </ul>
+      <button class="section-aboutwork__btn btn_orang" type="button" data-action="getform-[name, phone, email]">Узнать стоимость</button>
+    </div>
+  </section>
+
+  <section class="section-mywork" >
+    <div class="section-mywork__wrap fixed-conteiner">
+      <h2 class="section-mywork__title title-section">Примеры моих работ</h2>
+        <div class="section-mywork__slider-wrap">
+
+          <div class="section-mywork__slider slider" data-type="slider">
+
+            <figure data-type="slide" class="slider__slide">
+              <div data-type="image-cont" class="slider__image-cont"><img src="img/mywork_01.jpg" alt="mywork_01"></div>
+              <figcaption>Сайт психолога Веры&nbsp;Антоновой</figcaption>
+            </figure>
+
+            <figure data-type="slide" class="slider__slide">
+              <div data-type="image-cont" class="slider__image-cont"><img src="img/mywork_02.jpg" alt="mywork_01"></div>
+              <figcaption>Сайт магазина детской&nbsp;одежды</figcaption>
+            </figure>
+
+            <figure data-type="slide" class="slider__slide">
+              <div data-type="image-cont" class="slider__image-cont"><img src="img/mywork_03.jpg" alt="mywork_01"></div>
+              <figcaption>Сайт магазина &laquo;Рыболов&raquo;</figcaption>
+            </figure>
+
+            <figure data-type="slide" class="slider__slide">
+              <div data-type="image-cont" class="slider__image-cont"><img src="img/mywork_04.jpg" alt="mywork_01"></div>
+              <figcaption>Сайт психолога Веры&nbsp;Антоновой</figcaption>
+            </figure>
+
+          </div>
+
+        </div>
+
+      <button class="section-mywork__btn btn_orang" type="button" data-action="getform-[name, phone, email]">Заказать проект</button>
+    </div>
+  </section>
+
+  <section class="promo">
+    <div class="promo__wrap fixed-conteiner">
+      <div class="promo__bg-text">
+        <svg class="svg" width="14px" height="15px" aria-hidden="true" focusable="false"><use xlink:href="img/bg.svg#bg-char-1"></use></svg>
+        <svg class="svg" width="9px"  height="11px" aria-hidden="true" focusable="false"><use xlink:href="img/bg.svg#bg-char-2"></use></svg>
+        <svg class="svg" width="21px" height="12px" aria-hidden="true" focusable="false"><use xlink:href="img/bg.svg#bg-char-3"></use></svg>
+        <svg class="svg" width="37px" height="12px" aria-hidden="true" focusable="false"><use xlink:href="img/bg.svg#bg-char-4"></use></svg>
+        <svg class="svg" width="14px" height="15px" aria-hidden="true" focusable="false"><use xlink:href="img/bg.svg#bg-char-1"></use></svg>
+      </div>
+      <h2 class="promo__text">Адаптивная вёрстка под все устройства и&nbsp;браузеры от&nbsp;1000 рублей всего за&nbsp;4&nbsp;часа.*</h2>
+      <p class="promo__note">Срок и стоимость могут отличаться от заявленных и&nbsp;рассчитываются индивидуально, в&nbsp;зависимости от&nbsp;сложности задач.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-body">
+      <div class="footer-body__wrap fixed-conteiner">
+
+        <ul class="footer-body__nav">
+          <li><a href=#>Услуги</a></li>
+          <li><a href=#>Портфолио</a></li>
+          <li><a href=#>Стоимость</a></li>
+        </ul>
+
+        <ul class="footer-body__contacts">
+          <li class="footer-body__phone">
+            <a href=tel:+74999957755>
+              <svg class="svg" width="19px" height="19px" aria-hidden="true" focusable="false"><use xlink:href="img/icons.svg#icon-phone"></use></svg>
+              +7 (499) 995-77-55
+            </a>
+          </li>
+          <li class="footer-body__mail">
+            <a href=mailto:dmitry@alekseev.com>
+              <svg class="svg" width="23px" height="15px" aria-hidden="true" focusable="false"><use xlink:href="img/icons.svg#icon-mail"></use></svg>
+              dmitry@alekseev.com
+            </a>
+          </li>
+        </ul>
+
+        <div class="footer-body__meta">
+          <button class="footer-body__btn btn_white" type="button" data-action="getform-[name, phone]">Заказать звонок</button>
+          <ul class="footer-body__icons-social icons-social">
+            <li><a class="icons-social__vk" href=#></a></li>
+            <li><a class="icons-social__facebook"  href=#></a></li>
+            <li><a class="icons-social__twitter"  href=#></a></li>
+            <li><a class="icons-social__instagram"  href=#></a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+    <div class="footer-bar">
+      <div class="footer-bar__wrap fixed-conteiner">
+        <p class="footer-bar__text">&copy; Дмитрий Алексеев, 2016 &ndash; 2018</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<svg xmlns='http://www.w3.org/2000/svg' style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="linearGradient-1" gradientUnits="objectBoundingBox" x1="61%" y1="1%" x2="39%" y2="99%">
+      <stop offset="0" style="stop-color:#FF2F96"/>
+      <stop offset="1" style="stop-color:#FF8F5A"/>
+    </linearGradient> 
+
+    <linearGradient id="linearGradient-2" gradientUnits="objectBoundingBox" x1="50%" y1="0" x2="50%" y2="100%">
+      <stop offset="0" style="stop-color:#fa0891"/>
+      <stop offset="1" style="stop-color:#f26522"/>
+    </linearGradient> 
+  </defs>
+</svg>
+
+<!-- <script type="text/javascript" src="script/jquery.min.js"></script>
+<script type="text/javascript" src="script/jquery.validate.min.js"></script>
+<script type="text/javascript">
+  $('#test-form').validate();
+</script> -->
+
+</body>
+</html>
