@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const config = {};
   config.touch = ( ('ontouchstart' in window || ( window.DocumentTouch && document instanceof DocumentTouch) ) ) ? true : false;
+  config.adaptivElements = 'button, a';
 
   function settDelay(respons, ms) {
     return new Promise((resolve) => {
@@ -29,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // touch buttons modify
 
-  if ( !config.touch ) $('button').each( (i, el) => el.dataset.touch = "false" );
+  if ( !config.touch ) $(config.adaptivElements).each( (i, el) => el.dataset.touch = "false" );
 
 // set drop-down menu-nav
 
@@ -155,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function hendlers() {
     setTopStyle();
-    if ( !config.touch ) $('button', $_slider).attr('data-touch', "false");
+    if ( !config.touch ) $(config.adaptivElements, $_slider).attr('data-touch', "false");
   }
 
   $_slider.on('setPosition', hendlers);

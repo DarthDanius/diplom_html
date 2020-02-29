@@ -12,10 +12,66 @@
   align-items: center;
 }
 
-// #icon-nav {
-//   fill: black;
-//   opacity: 0.5;
-// }
+.nav-main {
+  @media (max-width: 1024px) {
+    display: none;
+  }
+
+  &__list {
+    display: flex;
+  }
+  &__item {
+    margin-right: 32px;
+  }
+  
+  &__link {
+    @include transition-link;
+
+    &_current {
+    color: $color-pink;
+
+      &:after {
+        width: 100%;
+      }
+    }
+
+  }
+
+
+  &_mobile {
+    @media (max-width: 1024px) {
+      display: block;
+      position: absolute;
+      background-color: white;
+      left: 0;
+      width: 100%;
+      top: 0;
+      font-size: 20px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      z-index: 2;
+      background-image: linear-gradient(13deg, #FF8F5A, #FF2F96);
+      background-size: 100% 10px;
+      background-repeat: no-repeat;
+      background-position-y: bottom;
+    }
+  
+    .nav-main__list {
+      @media (max-width: 1024px) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-weight: 500;
+      }
+    }
+  
+    .nav-main__item {
+      @media (max-width: 1024px) {
+        padding: 10px 0;
+      }
+    }
+  }
+}
 
 .btn-nav {
   line-height: 1px;
@@ -154,61 +210,6 @@
   }
 }
 
-.nav-main {
-  @media (max-width: 1024px) {
-    display: none;
-  }
-
-  &__list {
-    display: flex;
-  }
-  &__item {
-    margin-right: 32px;
-  }
-  
-  &__link {
-    
-    &_current {
-    color: $color-pink;
-    border-bottom: 1.5px solid $color-pink;
-    }
-  }
-
-  &_mobile {
-    @media (max-width: 1024px) {
-      display: block;
-      position: absolute;
-      background-color: white;
-      left: 0;
-      width: 100%;
-      top: 0;
-      font-size: 20px;
-      padding-top: 20px;
-      padding-bottom: 20px;
-      z-index: 2;
-      background-image: linear-gradient(13deg, #FF8F5A, #FF2F96);
-      background-size: 100% 10px;
-      background-repeat: no-repeat;
-      background-position-y: bottom;
-    }
-  
-    & ul {
-      @media (max-width: 1024px) {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        font-weight: 500;
-      }
-    }
-  
-    & li {
-      @media (max-width: 1024px) {
-        padding: 10px 0;
-      }
-    }
-  }
-}
-
 .service-list {
   display: flex;  
   justify-content: space-between;
@@ -274,32 +275,36 @@
 .icons-social {
   display: flex;
 
-  &__vk,
-  &__facebook,
-  &__twitter,
-  &__instagram {
+  &__link {
     display: block;
     background-image: url(../img/icons-social.png);
     height: 36px;
     width: 36px;
     margin-left: 19px;
-  }
 
-  &__vk {
-    background-position: -9px;
-    margin-left: 0px;
-  }
+    &_vk {
+      background-position: -9px;
+      margin-left: 0px;
+    }
 
-  &__facebook {
-    background-position: -64px;
-  }
+    &_facebook {
+      background-position: -64px;
+    }
 
-  &__twitter {
-    background-position: -118px;
-  }
+    &_twitter {
+      background-position: -118px;
+    }
 
-  &__instagram {
-    background-position: -173px;
+    &_instagram {
+      background-position: -173px;
+    }
+
+    &[data-touch="false"]:hover,
+    &:active {
+      border-radius: 5px;
+      box-shadow: 0px 0px 8px 3px $color-orange-shadow;
+      @include transition-hover;
+    }
   }
 }
 
@@ -423,7 +428,7 @@
 
   &__arrow-back,
   &__arrow-forward {
-    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px 3px $color-black-shadow;
     width: 60px;
     height: 60px;
     background-image: url(../img/arrow.png);
@@ -435,8 +440,8 @@
 
     &[data-touch="false"]:hover,
     &:active {
-      box-shadow: 0px 0px 8px 3px rgba(255,78,46, .5);
-      background-color: rgba(255,78,46, .5);
+      box-shadow: 0px 0px 8px 3px $color-orange-shadow;
+      background-color: $color-orange-shadow;
       @include transition-hover;
     }
   }
@@ -517,6 +522,7 @@
 
   &__link {
     color: inherit;
+    @include transition-link;
   }
 }
 
@@ -524,14 +530,18 @@
   font-size: 25px;
   white-space: nowrap;
 
-  &__item-phone {
+  &__link {
+    @include transition-link;
+  }
+
+  &__item_phone {
     background-repeat: no-repeat;
     @media (max-width: 540px) {
       letter-spacing: 0.4px;
     }
   }
 
-  &__icon-phone {
+  &__icon_phone {
     margin-right: 12px;
     fill: url(#linearGradient-2);
     width: 19px;
@@ -541,7 +551,7 @@
     }
   }
 
-  &__item-mail {
+  &__item_mail {
     margin-top: 28px;
     background-repeat: no-repeat;
     @media (max-width: 540px) {
@@ -549,7 +559,7 @@
     }
   }
 
-  &__icon-mail {
+  &__icon_mail {
     margin-right: 13px;
     width: 23px;
     height: auto;

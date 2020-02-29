@@ -61,6 +61,7 @@
       font-size: 18px;
       padding-left: 12px;
     }
+    @include transition-link;
   }
 
   &__btn-tel{
@@ -308,6 +309,7 @@
     color: $color-gray;
     font-size: 25px;
     font-weight: 400;
+    display: inline-block;
     @media (max-width: 600px) {
       font-size: 18px;
     }
@@ -627,10 +629,9 @@
       font-size: 16px;
       height: 55px;
       width: 280px;
-      color: #fff;
+      color: $color-white;
       letter-spacing: .5px;
-      // background-color: #ff4e2e;
-      background-color: #ff4e2e;
+      background-color: $color-orange;
       border: 0;
       align-self: center;
     }
@@ -638,8 +639,8 @@
     &[data-touch="false"]:hover,
     &:active {
       @media (max-width: 460px) {
-        box-shadow: 0 0 8px 3px rgba(255, 78, 46, .5);
-        background-color: #ff4e2e;
+        box-shadow: 0 0 8px 3px $color-orange-shadow;
+        background-color: $color-orange;
         @include transition-hover;
       }
     }
@@ -657,13 +658,13 @@
 //section footer-bar
 
 .footer-bar {
-  background-color: #31293C;
+  background-color: $color-purple;
 
   &__wrap {
     padding-top: 30px;
     padding-bottom: 33px;
     text-align: center;
-    color: white;
+    color: $color-white;
     @media (max-width: 460px) {
       font-size: 12px;
       padding: 18px;
