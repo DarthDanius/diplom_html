@@ -1,9 +1,9 @@
 'use strict'
 
-// import "normalize.css"messages_ru.min.js
+// import 'babel-polyfill';
 import '../style/index.scss'
+import '../modules/cap'
 import {Validator} from './validator.js'
-// console.log(Validator);
 import 'jquery.maskedinput/src/jquery.maskedinput.js'
 import 'slick-carousel/slick/slick.min.js'
 
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // touch buttons modify
 
-  if ( !config.touch ) document.querySelectorAll('button').forEach( (i) => i.dataset.touch = "false" );
+  if ( !config.touch ) $('button').each( (i, el) => el.dataset.touch = "false" );
 
 // set drop-down menu-nav
 
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if ( !config.touch ) $_submit[0].dataset.touch = "false";
       $_form.append($_submit);
 
-      const validator = new Validator( $_form, {messageAnimShowClass: 'slideDown', messageAnimHideClass: 'slideUp'} );
+      const validator = new Validator( $_form, {messageClass: 'form__message', messageAnimShowClass: 'slideDown', messageAnimHideClass: 'slideUp'} );
       $_form_wrap.append($_form)
       $_blackout.append($_form_wrap);
       $('body').append($_blackout);
@@ -153,7 +153,12 @@ document.addEventListener('DOMContentLoaded', () => {
     $_arrow.css('top', top);
   }
 
-  $_slider.on('setPosition', setTopStyle);
+  function hendlers() {
+    setTopStyle();
+    if ( !config.touch ) $('button', $_slider).attr('data-touch', "false");
+  }
+
+  $_slider.on('setPosition', hendlers);
   
   $_slider.slick({
     slidesToShow: 3,
@@ -161,8 +166,8 @@ document.addEventListener('DOMContentLoaded', () => {
     slidesToScroll: 1,
     autoplay: false,
     autoplaySpeed: 2000,
-    prevArrow: '<button id="prev" type="button" class="slider__arrow-back "></button>',
-    nextArrow: '<button id="prev" type="button" class="slider__arrow-forward "></button>',
+    prevArrow: '<button id="prev" type="button" class="slider__arrow-back"></button>',
+    nextArrow: '<button id="next" type="button" class="slider__arrow-forward"></button>',
     dotsClass: 'slider__dots',
     responsive: [
 	    {

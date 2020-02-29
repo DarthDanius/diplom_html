@@ -19,27 +19,33 @@
   <header class="header-main">
     <div class="header-main__wrap fixed-conteiner">
       <button class="header-main__btn-nav btn-nav" type="button">
-        <!-- <object class="svg" aria-hidden="true" focusable="false" type="image/svg+xml" data="img/icons.svg#icon-nav"></object> -->
-        <!-- <svg class="svg" aria-hidden="true" focusable="false"><use xlink:href="img/icons.svg#icon-nav"></use></svg> -->
-        <svg xmlns='http://www.w3.org/2000/svg' class="svg" aria-hidden="true" focusable="false" viewBox="0 0 145 103">
-          <g id="icon-nav" class="svg__icons">
-            <polygon class="fil0" points="0,85 0,103 145,103 145,85 "/>
-            <polygon class="fil1" points="0,43 0,61 145,61 145,43 "/>
-            <polygon class="fil2" points="145,0 0,0 0,18 145,18 "/>
+        <svg class="btn-nav__svg" xmlns='http://www.w3.org/2000/svg' aria-hidden="true" focusable="false" viewBox="0 0 145 103">
+          <g class="btn-nav__group  svg__icons" id="icon-nav">
+            <polygon class="btn-nav__element" points="0,85 0,103 145,103 145,85 "/>
+            <polygon class="btn-nav__element" points="0,43 0,61 145,61 145,43 "/>
+            <polygon class="btn-nav__element" points="145,0 0,0 0,18 145,18 "/>
           </g>
         </svg>
       </button>
       <nav class="header-main__nav nav-main">
         <ul class="nav-main__list">
-          <li class="nav-main__item"><a href="#">Услуги</a></li>
-          <li class="nav-main__item nav-main__item_current"><a href="#">Портфолио</a></li>
-          <li class="nav-main__item"><a href="#">Стоимость</a></li>
+          <li class="nav-main__item">
+            <a class="nav-main__link" href="#">Услуги</a>
+          </li>
+          <li class="nav-main__item">
+            <a class="nav-main__link nav-main__link_current" href="#">Портфолио</a>
+          </li>
+          <li class="nav-main__item">
+            <a class="nav-main__link" href="#">Стоимость</a>
+          </li>
         </ul>
       </nav>
       <a class="header-main__link-tel" href="tel:+74999955577">+7 (499) 995-55-77</a>
-      <button class="header-main__btn-tel btn_white" type="button" data-action="getform-[name, phone]" id="call-request">
-        <svg class="svg" aria-hidden="true" focusable="false" viewBox="0 0 0.91 0.91"><use xlink:href="img/icons.svg#icon-phone_circle" clip-path="url(#clipPath-1)"></use></svg>
-        <span>Заказать звонок</span>
+      <button class="header-main__btn-tel btn-transform" type="button" data-action="getform-[name, phone]" id="call-request">
+        <svg class="btn-transform__icon" aria-hidden="true" focusable="false" viewBox="0 0 0.91 0.91">
+          <use xlink:href="img/icons.svg#icon-phone_circle" clip-path="url(#clipPath-1)"></use>
+        </svg>
+        <span class="btn-transform__body">Заказать звонок</span>
       </button>
     </div>
   </header>
@@ -47,49 +53,43 @@
   <section class="section-aboutmy">
     <div class="section-aboutmy__wrap fixed-conteiner">
       <div class="section-aboutmy__bg-text">
-        <svg class="svg" width="14px" height="15px" aria-hidden="true" focusable="false"><use xlink:href="img/bg.svg#bg-char-1"></use></svg>
-        <svg class="svg" width="9px"  height="11px" aria-hidden="true" focusable="false"><use xlink:href="img/bg.svg#bg-char-2"></use></svg>
-        <svg class="svg" width="21px" height="12px" aria-hidden="true" focusable="false"><use xlink:href="img/bg.svg#bg-char-3"></use></svg>
-        <svg class="svg" width="37px" height="12px" aria-hidden="true" focusable="false"><use xlink:href="img/bg.svg#bg-char-4"></use></svg>
-        <svg class="svg" width="37px" height="12px" aria-hidden="true" focusable="false"><use xlink:href="img/bg.svg#bg-char-4"></use></svg>
-        <svg class="svg" width="21px" height="12px" aria-hidden="true" focusable="false"><use xlink:href="img/bg.svg#bg-char-3"></use></svg>
+        <svg class="section-aboutmy__char" width="14px" height="15px" aria-hidden="true" focusable="false"><use xlink:href="img/bg.svg#bg-char-1"></use></svg>
+        <svg class="section-aboutmy__char" width="9px"  height="11px" aria-hidden="true" focusable="false"><use xlink:href="img/bg.svg#bg-char-2"></use></svg>
+        <svg class="section-aboutmy__char" width="21px" height="12px" aria-hidden="true" focusable="false"><use xlink:href="img/bg.svg#bg-char-3"></use></svg>
+        <svg class="section-aboutmy__char" width="37px" height="12px" aria-hidden="true" focusable="false"><use xlink:href="img/bg.svg#bg-char-4"></use></svg>
+        <svg class="section-aboutmy__char" width="37px" height="12px" aria-hidden="true" focusable="false"><use xlink:href="img/bg.svg#bg-char-4"></use></svg>
+        <svg class="section-aboutmy__char" width="21px" height="12px" aria-hidden="true" focusable="false"><use xlink:href="img/bg.svg#bg-char-3"></use></svg>
       </div>
       <div class="section-aboutmy__bg-image">
-        <svg class="section-aboutmy__figure svg" viewBox="0 0 14384 11142" aria-hidden="true" focusable="false"><use xlink:href="img/bg.svg#bg-figure-1"></use></svg>
+        <svg class="section-aboutmy__figure" viewBox="0 0 14384 11142" aria-hidden="true" focusable="false"><use xlink:href="img/bg.svg#bg-figure-1"></use></svg>
         <img class="section-aboutmy__avatar" src="img/bg-avatar-no-shadow.png" alt="avatar">
       </div>
-      <h1 class="section-aboutmy__title title-section" >Дмитрий Алексеев<br><span>Frontend разработчик и веб-верстальщик</span></h1>
+      <h1 class="section-aboutmy__title title-section" >Дмитрий Алексеев<br>
+        <span class="section-aboutmy__marker">Frontend разработчик и веб-верстальщик</span>
+      </h1>
       <button class="section-aboutmy__btn btn_orang" type="button" data-action="getform-[name, phone, email]">Узнать больше</button>
     </div>
   </section>
-
-  <!-- <form id="test-form" class="form" action="#">
-    <input type="text" name="name" class="form__input-text form__input-text_name" placeholder="имя" required="required">
-    <input type="tel" name="phone" class="form__input-text form__input-text_phone" placeholder="телефон" required="required">
-    <textarea name="textarea" class="form__textarea" placeholder="..." required="true"></textarea>
-    <input type="email" name="email" class="form__input-text form__input-text_email" placeholder="e-mail" required="required">
-    <input type="submit" class="form__btn btn_orang" value="Узнать больше">
-  </form> -->
 
   <section class="section-aboutwork">
     <div class="section-aboutwork__wrap fixed-conteiner">
       <h2 class="section-aboutwork__title title-section">Что я делаю</h2>
       <ul class="section-aboutwork__list service-list">
         <li class="service-list__item">
-          <svg class="svg" width="79px" height="73px" viewBox="0 0 883 817" aria-hidden="true" focusable="false"><use xlink:href="img/icons.svg#icon-1"></use></svg>
-          <p>Вёрстка лендинг&ndash;страниц и&nbsp;сайтов любой сложности</p>
+          <svg class="service-list__icon" width="79px" height="73px" viewBox="0 0 883 817" aria-hidden="true" focusable="false"><use xlink:href="img/icons.svg#icon-1"></use></svg>
+          <p class="service-list__text">Вёрстка лендинг&ndash;страниц и&nbsp;сайтов любой сложности</p>
         </li>
         <li class="service-list__item">
-          <svg class="svg" width="79px" height="75px" viewBox="0 0 856 813" aria-hidden="true" focusable="false"><use xlink:href="img/icons.svg#icon-2"></use></svg>
-          <p>Адаптивная вёрстка под все браузеры и&nbsp;устройства</p>
+          <svg class="service-list__icon" width="79px" height="75px" viewBox="0 0 856 813" aria-hidden="true" focusable="false"><use xlink:href="img/icons.svg#icon-2"></use></svg>
+          <p class="service-list__text">Адаптивная вёрстка под все браузеры и&nbsp;устройства</p>
         </li>
         <li class="service-list__item">
-          <svg class="svg" width="74px" height="74px" viewBox="0 0 730 729" aria-hidden="true" focusable="false"><use xlink:href="img/icons.svg#icon-3"></use></svg>
-          <p>Frontend&ndash;разработка и&nbsp;программирование</p>
+          <svg class="service-list__icon" width="74px" height="74px" viewBox="0 0 730 729" aria-hidden="true" focusable="false"><use xlink:href="img/icons.svg#icon-3"></use></svg>
+          <p class="service-list__text">Frontend&ndash;разработка и&nbsp;программирование</p>
         </li>
         <li class="service-list__item">
-          <svg class="svg" width="74px" height="73px" viewBox="0 0 709 708" aria-hidden="true" focusable="false"><use xlink:href="img/icons.svg#icon-4"></use></svg>
-          <p>Исправление и&nbsp;доработка существующей верстки</p>
+          <svg class="service-list__icon" width="74px" height="73px" viewBox="0 0 709 708" aria-hidden="true" focusable="false"><use xlink:href="img/icons.svg#icon-4"></use></svg>
+          <p class="service-list__text">Исправление и&nbsp;доработка существующей верстки</p>
         </li>
       </ul>
       <button class="section-aboutwork__btn btn_orang" type="button" data-action="getform-[name, phone, email]">Узнать стоимость</button>
@@ -103,24 +103,28 @@
 
           <div class="section-mywork__slider slider" data-type="slider">
 
-            <figure data-type="slide" class="slider__slide">
-              <div data-type="image-cont" class="slider__image-cont"><img src="img/mywork_01.jpg" alt="mywork_01"></div>
-              <figcaption>Сайт психолога Веры&nbsp;Антоновой</figcaption>
+            <figure class="slider__slide" data-type="slide">
+              <div class="slider__image-cont" data-type="image-cont">
+                <img class="slider__image"g src="img/mywork_01.jpg" alt="mywork_01"></div>
+              <figcaption class="slider__title">Сайт психолога Веры&nbsp;Антоновой</figcaption>
             </figure>
 
-            <figure data-type="slide" class="slider__slide">
-              <div data-type="image-cont" class="slider__image-cont"><img src="img/mywork_02.jpg" alt="mywork_01"></div>
-              <figcaption>Сайт магазина детской&nbsp;одежды</figcaption>
+            <figure class="slider__slide" data-type="slide">
+              <div class="slider__image-cont" data-type="image-cont">
+                <img class="slider__image" src="img/mywork_02.jpg" alt="mywork_01"></div>
+              <figcaption class="slider__title">Сайт магазина детской&nbsp;одежды</figcaption>
             </figure>
 
-            <figure data-type="slide" class="slider__slide">
-              <div data-type="image-cont" class="slider__image-cont"><img src="img/mywork_03.jpg" alt="mywork_01"></div>
-              <figcaption>Сайт магазина &laquo;Рыболов&raquo;</figcaption>
+            <figure class="slider__slide" data-type="slide">
+              <div class="slider__image-cont" data-type="image-cont">
+                <img class="slider__image" src="img/mywork_03.jpg" alt="mywork_01"></div>
+              <figcaption class="slider__title">Сайт магазина &laquo;Рыболов&raquo;</figcaption>
             </figure>
 
-            <figure data-type="slide" class="slider__slide">
-              <div data-type="image-cont" class="slider__image-cont"><img src="img/mywork_04.jpg" alt="mywork_01"></div>
-              <figcaption>Сайт психолога Веры&nbsp;Антоновой</figcaption>
+            <figure class="slider__slide" data-type="slide">
+              <div class="slider__image-cont" data-type="image-cont">
+                <img class="slider__image" src="img/mywork_04.jpg" alt="mywork_01"></div>
+              <figcaption class="slider__title">Сайт психолога Веры&nbsp;Антоновой</figcaption>
             </figure>
 
           </div>
@@ -134,11 +138,11 @@
   <section class="promo">
     <div class="promo__wrap fixed-conteiner">
       <div class="promo__bg-text">
-        <svg class="svg" width="14px" height="15px" aria-hidden="true" focusable="false"><use xlink:href="img/bg.svg#bg-char-1"></use></svg>
-        <svg class="svg" width="9px"  height="11px" aria-hidden="true" focusable="false"><use xlink:href="img/bg.svg#bg-char-2"></use></svg>
-        <svg class="svg" width="21px" height="12px" aria-hidden="true" focusable="false"><use xlink:href="img/bg.svg#bg-char-3"></use></svg>
-        <svg class="svg" width="37px" height="12px" aria-hidden="true" focusable="false"><use xlink:href="img/bg.svg#bg-char-4"></use></svg>
-        <svg class="svg" width="14px" height="15px" aria-hidden="true" focusable="false"><use xlink:href="img/bg.svg#bg-char-1"></use></svg>
+        <svg class="promo__char" width="14px" height="15px" aria-hidden="true" focusable="false"><use xlink:href="img/bg.svg#bg-char-1"></use></svg>
+        <svg class="promo__char" width="9px"  height="11px" aria-hidden="true" focusable="false"><use xlink:href="img/bg.svg#bg-char-2"></use></svg>
+        <svg class="promo__char" width="21px" height="12px" aria-hidden="true" focusable="false"><use xlink:href="img/bg.svg#bg-char-3"></use></svg>
+        <svg class="promo__char" width="37px" height="12px" aria-hidden="true" focusable="false"><use xlink:href="img/bg.svg#bg-char-4"></use></svg>
+        <svg class="promo__char" width="14px" height="15px" aria-hidden="true" focusable="false"><use xlink:href="img/bg.svg#bg-char-1"></use></svg>
       </div>
       <h2 class="promo__text">Адаптивная вёрстка под все устройства и&nbsp;браузеры от&nbsp;1000 рублей всего за&nbsp;4&nbsp;часа.*</h2>
       <p class="promo__note">Срок и стоимость могут отличаться от заявленных и&nbsp;рассчитываются индивидуально, в&nbsp;зависимости от&nbsp;сложности задач.</p>
@@ -149,34 +153,52 @@
     <div class="footer-body">
       <div class="footer-body__wrap fixed-conteiner">
 
-        <ul class="footer-body__nav">
-          <li><a href=#>Услуги</a></li>
-          <li><a href=#>Портфолио</a></li>
-          <li><a href=#>Стоимость</a></li>
+        <ul class="footer-body__nav nav-footer">
+          <li class="nav-footer__item">
+            <a class="nav-footer__link" href=#>Услуги</a>
+          </li>
+          <li class="nav-footer__item">
+            <a class="nav-footer__link" href=#>Портфолио</a>
+          </li>
+          <li class="nav-footer__item">
+            <a class="nav-footer__link" href=#>Стоимость</a>
+          </li>
         </ul>
 
-        <ul class="footer-body__contacts">
-          <li class="footer-body__phone">
-            <a href=tel:+74999957755>
-              <svg class="svg" width="19px" height="19px" aria-hidden="true" focusable="false"><use xlink:href="img/icons.svg#icon-phone"></use></svg>
+        <ul class="footer-body__contacts contacts-list">
+
+          <li class="contacts-list__item-phone">
+            <a class="contacts-list__link-phone" href=tel:+74999957755>
+              <svg class="contacts-list__icon-phone" aria-hidden="true" focusable="false" viewBox="0 0 43 43">
+                <use xlink:href="img/icons.svg#icon-phone"></use>
+              </svg>
               +7 (499) 995-77-55
             </a>
           </li>
-          <li class="footer-body__mail">
-            <a href=mailto:dmitry@alekseev.com>
-              <svg class="svg" width="23px" height="15px" aria-hidden="true" focusable="false"><use xlink:href="img/icons.svg#icon-mail"></use></svg>
+
+          <li class="contacts-list__item-mail">
+            <a class="contacts-list__link-mail" href=mailto:dmitry@alekseev.com>
+              <svg class="contacts-list__icon-mail" aria-hidden="true" focusable="false" viewBox="0 0 63 41"><use xlink:href="img/icons.svg#icon-mail"></use></svg>
               dmitry@alekseev.com
             </a>
           </li>
         </ul>
 
         <div class="footer-body__meta">
-          <button class="footer-body__btn btn_white" type="button" data-action="getform-[name, phone]">Заказать звонок</button>
+          <button class="footer-body__btn btn-white" type="button" data-action="getform-[name, phone]">Заказать звонок</button>
           <ul class="footer-body__icons-social icons-social">
-            <li><a class="icons-social__vk" href=#></a></li>
-            <li><a class="icons-social__facebook"  href=#></a></li>
-            <li><a class="icons-social__twitter"  href=#></a></li>
-            <li><a class="icons-social__instagram"  href=#></a></li>
+            <li class="icons-social__item">
+              <a class="icons-social__vk" href=#></a>
+            </li>
+            <li class="icons-social__item">
+              <a class="icons-social__facebook" href=#></a>
+            </li>
+            <li class="icons-social__item">
+              <a class="icons-social__twitter" href=#></a>
+            </li>
+            <li class="icons-social__item">
+              <a class="icons-social__instagram" href=#></a>
+            </li>
           </ul>
         </div>
 
@@ -203,12 +225,6 @@
     </linearGradient> 
   </defs>
 </svg>
-
-<!-- <script type="text/javascript" src="script/jquery.min.js"></script>
-<script type="text/javascript" src="script/jquery.validate.min.js"></script>
-<script type="text/javascript">
-  $('#test-form').validate();
-</script> -->
 
 </body>
 </html>

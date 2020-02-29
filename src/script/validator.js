@@ -139,16 +139,22 @@ export class Validator{// use jquery.maskedinput.js => jquery 3.4.x
   }
 
   showMessage(field, options){
+    // console.log(field);
     field.message.removeClass(options.messageAnimHideClass);
     field.message.removeClass(options.validClass);
+    field.element.classList.remove(options.validClass);
     field.message.addClass(options.errorClass);
+    field.element.classList.add(options.errorClass);
     field.message.addClass(options.messageAnimShowClass);
   }
 
   hideMessage(field, options){
+    // console.log(field);
     field.message.removeClass(options.messageAnimShowClass);
     field.message.removeClass(options.errorClass);
+    field.element.classList.remove(options.errorClass);
     field.message.addClass(options.validClass);
+    field.element.classList.add(options.validClass);
     field.message.addClass(options.messageAnimHideClass);
   }
 
@@ -159,7 +165,7 @@ export class Validator{// use jquery.maskedinput.js => jquery 3.4.x
       // console.log(`condition 1 : ${(field.change === false && field.valid !== null)}`);
       if ( field.change === false && field.valid !== null ) break;
 
-      for ( let setOfRules of Object.entries(this.options.rules) ) {// setOfRules = [ "name", {rules} ]        
+      for ( let setOfRules of Object.entries(this.options.rules) ) {// setOfRules = [ "name", {rules} ]
         if ( field.element.getAttribute('name') === setOfRules[0] ) {// если есть именованный набор правил сопостовимый с атрибутом 'name'
           let rules = Object.entries(setOfRules[1]);// rules = [ [rule], rule] ]
 

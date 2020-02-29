@@ -28,15 +28,13 @@
   transition-property: background-color, box-shadow, border-color, outline-color, height;
   transition-duration: $time-hover;
 
-  & svg {
+  &__svg {
     height: 100%;
     fill: url(#linearGradient-2);
+  }
 
-    & .fil0,
-    & .fil1,
-    & .fil2 {
-      @include transition-btn-nav;
-    }
+  &__element {
+    @include transition-btn-nav;
   }
 
   &[data-touch="false"]:hover,
@@ -52,33 +50,59 @@
     border-radius: 10px;
     height: 45px;
 
-    // & svg {
-    //   // height: 100%;
-    // }
+    & .btn-nav__element:nth-child(1) {
+      @include transition-btn-nav;
+      transform-origin: 50% 92.23%;
+      transform: translateY(-41%) rotate(-45deg);
+    }
 
-    & #icon-nav {
+    & .btn-nav__element:nth-child(2) {
+      @include transition-btn-nav;
+      opacity: 0;
+    }
 
-      & .fil0 {
-        @include transition-btn-nav;
-        transform-origin: 50% 92.23%;
-        transform: translateY(-41%) rotate(-45deg);
-      }
-
-      & .fil1 {
-        @include transition-btn-nav;
-        opacity: 0;
-      }
-
-      & .fil2 {
-        @include transition-btn-nav;
-        transform-origin: 50% 8.74%;
-        transform: translateY(41%) rotate(45deg);
-      }
+    & .btn-nav__element:nth-child(3) {
+      @include transition-btn-nav;
+      transform-origin: 50% 8.74%;
+      transform: translateY(41%) rotate(45deg);
     }
   }
 }
 
-.btn_white {
+.btn-transform {
+  width: 206px;
+  height: 44px;
+  font-size: 16px;
+  color: $color-pink;
+  border: 1px solid $color-pink;
+  background-color: $color-white;
+  @include transition-hover;
+
+  &[data-touch="false"]:hover,
+  &:active {
+    box-shadow: 0px 0px 8px 3px rgba(255, 47, 150, .5);
+    background-color: rgba(255, 47, 150, .5);
+    @include transition-hover;
+  }
+
+  &__icon {
+    display: none;
+    @media (max-width: 600px) {
+      display: block;
+      width: inherit;
+      height: inherit;
+      fill: url(#linearGradient-2)
+    }
+  }
+
+  &__body {
+    @media (max-width: 600px) {
+      display: none;
+    }
+  }
+}
+
+.btn-white {
   width: 206px;
   height: 44px;
   font-size: 16px;
@@ -142,9 +166,12 @@
     margin-right: 32px;
   }
   
-  &__item_current > a {
+  &__link {
+    
+    &_current {
     color: $color-pink;
     border-bottom: 1.5px solid $color-pink;
+    }
   }
 
   &_mobile {
@@ -186,22 +213,6 @@
   display: flex;  
   justify-content: space-between;
 
-  & li:nth-child(1) {
-    flex-basis: 257px;
-  }
-
-  & li:nth-child(2) {
-    flex-basis: 271px;
-  }
-
-  & li:nth-child(3) {
-    flex-basis: 200px;
-  }
-
-  & li:nth-child(4) {
-    flex-basis: 247px;
-  }
-
   &__item {
     display: flex;
     flex-direction: column;
@@ -209,28 +220,44 @@
     align-items: center;
   }
 
-  & svg {
+  &__item:nth-child(1) {
+    flex-basis: 257px;
+  }
+
+  &__item:nth-child(2) {
+    flex-basis: 271px;
+  }
+
+  &__item:nth-child(3) {
+    flex-basis: 200px;
+  }
+
+  &__item:nth-child(4) {
+    flex-basis: 247px;
+  }
+
+  &__icon {
     fill: url(#linearGradient-2);
     @media (max-width: 460px) {
       height: auto;
     }
   }
 
-  & li:nth-of-type(1) svg,
-  & li:nth-of-type(2) svg {
+  &__icon:nth-of-type(1),
+  &__icon:nth-of-type(2) {
     @media (max-width: 460px) {
       width: 59px;
     }
   }
 
-  & li:nth-of-type(3) svg,
-  & li:nth-of-type(4) svg {
+  &__icon:nth-of-type(3),
+  &__icon:nth-of-type(4) {
     @media (max-width: 460px) {
       width: 60px;
     }
   }
   
-  & p {
+  &__text {
     font-size: 20px;
     color: $color-gray;
     margin-top: 17px;
@@ -279,7 +306,6 @@
 .form {
   width: 310px;
   background-color: $color-white;
-  // padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -310,7 +336,6 @@
     height: 25px;
     margin: 5px 0;
     padding-left: 10px;
-    // &:not(:first-child)  padding-top: ;
   }
 
   &__icon {
@@ -335,8 +360,7 @@
     color: $color-orange;
   }
 
-  & span.message {
-    // display: none;
+  &__message {
     opacity: 0;
     color: red;
     font-size: 12px;
@@ -347,14 +371,14 @@
     height: 0;
   }
 
-  & span.message.valid {
+  &__message.valid {
     margin-bottom: 0;
     height: 0;
     opacity: 0;
     @include transition-message;
   }
 
-  & span.message.error {
+  &__message.error {
     margin-bottom: 10px;
     height: auto;
     opacity: 1;
@@ -386,7 +410,7 @@
     }
   }
 
-  &__image-cont img {
+  &__image {
     object-fit: contain;
     height: 100%;
     width: 100%;
@@ -408,6 +432,13 @@
     font-size: 1px;
     cursor: pointer;
     z-index: 1;
+
+    &[data-touch="false"]:hover,
+    &:active {
+      box-shadow: 0px 0px 8px 3px rgba(255,78,46, .5);
+      background-color: rgba(255,78,46, .5);
+      @include transition-hover;
+    }
   }
 
   &__arrow-back {
@@ -449,11 +480,82 @@
         height: 11px;
         margin: 0 8px;
       }
+
+      &[data-touch="false"]:hover,
+      &:active {
+        box-shadow: 0px 0px 8px 3px rgba(255,78,46, .5);
+        background-color: rgba(255,78,46, .5);
+        @include transition-hover;
+      }
+
+
     }
 
     & .slick-active button {
-      background-color: #ff4e2e;
+      background-color: $color-orange;
+
+      
+      &[data-touch="false"]:hover,
+      &:active {
+        background-color: $color-orange;
+      }
     }
   }
 
+}
+
+.nav-footer {
+  font-size: 18px;
+  color: $color-gray;
+
+  &__item:not(:first-of-type) {
+    margin-top: 11px;
+    @media (max-width: 460px) {
+      margin-top: 15px;
+    }
+  }
+
+  &__link {
+    color: inherit;
+  }
+}
+
+.contacts-list {
+  font-size: 25px;
+  white-space: nowrap;
+
+  &__item-phone {
+    background-repeat: no-repeat;
+    @media (max-width: 540px) {
+      letter-spacing: 0.4px;
+    }
+  }
+
+  &__icon-phone {
+    margin-right: 12px;
+    fill: url(#linearGradient-2);
+    width: 19px;
+    height: auto;
+    @media (max-width: 540px) {
+      width: 12px;
+    }
+  }
+
+  &__item-mail {
+    margin-top: 28px;
+    background-repeat: no-repeat;
+    @media (max-width: 540px) {
+      margin-top: 22px;
+    }
+  }
+
+  &__icon-mail {
+    margin-right: 13px;
+    width: 23px;
+    height: auto;
+    fill: url(#linearGradient-2);
+    @media (max-width: 540px) {
+      width: 14px;
+    }
+  }
 }
