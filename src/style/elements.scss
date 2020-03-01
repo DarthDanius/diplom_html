@@ -1,4 +1,4 @@
-.blackout-containet {
+.blackout-container {
   position: fixed;
   top: 0;
   left: 0;
@@ -12,18 +12,12 @@
   align-items: center;
 }
 
-.nav-main {
-  @media (max-width: 1024px) {
-    display: none;
-  }
+.nav {
 
   &__list {
     display: flex;
   }
-  &__item {
-    margin-right: 32px;
-  }
-  
+
   &__link {
     @include transition-link;
 
@@ -34,15 +28,27 @@
         width: 100%;
       }
     }
-
   }
 
+  &_main {
+    @media (max-width: 1024px) {
+      display: none;
+    }
+
+    .nav__list {
+      display: flex;
+    }
+
+    .nav__item {
+      margin-right: 32px;
+    }
+  }
 
   &_mobile {
     @media (max-width: 1024px) {
       display: block;
       position: absolute;
-      background-color: white;
+      background-color: $color-white;
       left: 0;
       width: 100%;
       top: 0;
@@ -50,13 +56,13 @@
       padding-top: 20px;
       padding-bottom: 20px;
       z-index: 2;
-      background-image: linear-gradient(13deg, #FF8F5A, #FF2F96);
+      background-image: linear-gradient(13deg, $color-orange-light, $color-pink);
       background-size: 100% 10px;
       background-repeat: no-repeat;
       background-position-y: bottom;
     }
-  
-    .nav-main__list {
+
+    .nav__list {
       @media (max-width: 1024px) {
         flex-direction: column;
         justify-content: center;
@@ -64,13 +70,34 @@
         font-weight: 500;
       }
     }
-  
-    .nav-main__item {
+
+    .nav__item {
       @media (max-width: 1024px) {
         padding: 10px 0;
       }
     }
   }
+
+  &_footer {
+    font-size: 18px;
+    color: $color-gray;
+
+    .nav__list {
+      flex-direction: column;
+    }
+  
+    .nav__item:not(:first-of-type) {
+      margin-top: 13px;
+      @media (max-width: 460px) {
+        margin-top: 16px;
+      }
+    }
+  
+    .nav__link {
+      color: inherit;
+    }
+  }
+
 }
 
 .btn-nav {
@@ -146,7 +173,7 @@
     @media (max-width: 600px) {
       display: block;
       width: inherit;
-      height: inherit;
+      height: 100%;
       fill: url(#linearGradient-2)
     }
   }
@@ -191,7 +218,6 @@
   @media (max-width: 460px) {
     width: 280px;
     height: 55px;
-    margin-top: 23px;
     font-size: 16px;
   }
 
@@ -205,6 +231,10 @@
 .title-section {
   font-size: 54px;
   font-weight: 700;
+  line-height: 1.2;
+  @media (max-width: 600px) {
+    font-size: 40px;
+  }
   @media (max-width: 460px) {
     font-size: 30px;
   }
@@ -261,7 +291,7 @@
   &__text {
     font-size: 20px;
     color: $color-gray;
-    margin-top: 17px;
+    margin-top: 15px;
     line-height: 30px;
     @media (max-width: 460px) {
       font-size: 16px;
@@ -408,7 +438,7 @@
     height: 290px;
     @media (max-width: 1024px) {
       height: 360px;
-      margin-bottom: 17px;
+      margin-bottom: 20px;
     }
     @media (max-width: 460px) {
       height: 250px;
@@ -464,7 +494,7 @@
     flex-wrap: wrap;
     margin: 0 auto;
     @media (max-width: 1024px) {
-      margin-top: 71px;
+      margin-top: 89px;
     }
     @media (max-width: 460px) {
       margin-top: 44px;
@@ -509,22 +539,22 @@
 
 }
 
-.nav-footer {
-  font-size: 18px;
-  color: $color-gray;
+// .nav-footer {
+//   font-size: 18px;
+//   color: $color-gray;
 
-  &__item:not(:first-of-type) {
-    margin-top: 11px;
-    @media (max-width: 460px) {
-      margin-top: 15px;
-    }
-  }
+//   &__item:not(:first-of-type) {
+//     margin-top: 11px;
+//     @media (max-width: 460px) {
+//       margin-top: 15px;
+//     }
+//   }
 
-  &__link {
-    color: inherit;
-    @include transition-link;
-  }
-}
+//   &__link {
+//     color: inherit;
+//     @include transition-link;
+//   }
+// }
 
 .contacts-list {
   font-size: 25px;
@@ -552,10 +582,10 @@
   }
 
   &__item_mail {
-    margin-top: 28px;
+    margin-top: 32px;
     background-repeat: no-repeat;
     @media (max-width: 540px) {
-      margin-top: 22px;
+      margin-top: 24px;
     }
   }
 

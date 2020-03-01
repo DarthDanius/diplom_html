@@ -13,15 +13,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const config = {};
   config.touch = ( ('ontouchstart' in window || ( window.DocumentTouch && document instanceof DocumentTouch) ) ) ? true : false;
-  config.adaptivElements = 'button, a';
+  config.adaptiveElements = 'button, a';
 
-  function settDelay(respons, ms) {
+  function settDelay(response, ms) {
     return new Promise((resolve) => {
-      setTimeout( (r) => resolve(r), ms, respons);
+      setTimeout( (r) => resolve(r), ms, response);
     })
   };
 
-  function animHendler(el, ...cls) {
+  function animHandler(el, ...cls) {
     return new Promise((resolve) => {
       cls.forEach( (i)=>el.classList.add(i));
       el.onanimationend = (e) => resolve(e);
@@ -30,22 +30,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // touch buttons modify
 
-  if ( !config.touch ) $(config.adaptivElements).each( (i, el) => el.dataset.touch = "false" );
+  if ( !config.touch ) $(config.adaptiveElements).each( (i, el) => el.dataset.touch = "false" );
 
 // set drop-down menu-nav
 
+  // $('.header-main__btn-nav').on('click', (e) => {
+  //   const $el_nav = $('.nav');
+  //   if ( !$el_nav.hasClass('nav-main_mobile') ) {
+  //     $el_nav.removeClass('slideUp');
+  //     $el_nav.addClass('slideDown');
+  //     $el_nav.addClass('nav-main_mobile');
+  //     e.currentTarget.classList.add('btn-nav_close');
+  //   } else {
+  //     $el_nav.removeClass('slideDown');
+  //     e.currentTarget.classList.remove('btn-nav_close');
+  //     animHandler( $el_nav[0], 'slideUp' )
+  //     .then( (r) => $el_nav.removeClass('nav-main_mobile') );
+  //   }
+  // })
+
   $('.header-main__btn-nav').on('click', (e) => {
-    const $el_nav = $('.nav-main');
-    if ( !$el_nav.hasClass('nav-main_mobile') ) {
-      $('.nav-main').removeClass('slideUp');
-      $('.nav-main').addClass('slideDown');
-      $('.nav-main').addClass('nav-main_mobile');
+    const $el_nav = $('.nav');
+    if ( !$el_nav.hasClass('nav_mobile') ) {
+      $el_nav.removeClass('slideUp');
+      $el_nav.addClass('slideDown');
+      $el_nav.addClass('nav_mobile');
       e.currentTarget.classList.add('btn-nav_close');
     } else {
-      $('.nav-main').removeClass('slideDown');
+      $el_nav.removeClass('slideDown');
       e.currentTarget.classList.remove('btn-nav_close');
-      animHendler( $('.nav-main')[0], 'slideUp' )
-      .then( (r) => $('.nav-main').removeClass('nav-main_mobile') );
+      animHandler( $el_nav[0], 'slideUp' )
+      .then( (r) => {
+        $el_nav.removeClass('nav_mobile');
+        $el_nav.removeClass('slideUp');
+    } );
     }
   })
 
@@ -66,10 +84,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function createForm(el, attributes) {
       const action = 'mail.php';
 
-      if ( !attributes || attributes.lendth === 0) return;// бессмысленная проверка
+      if ( !attributes || attributes.length === 0) return;// бессмысленная проверка
       attributes = new Set(attributes);// еще одна бессмысленная проверка. Так, на всякий
 
-      const $_blackout = $('<div class="blackout-containet">').on( 'click', function(e) {
+      const $_blackout = $('<div class="blackout-container">').on( 'click', function(e) {
         if (e.target !== e.currentTarget) return false;
         e.stopPropagation();
         $_blackout.remove();
@@ -154,12 +172,12 @@ document.addEventListener('DOMContentLoaded', () => {
     $_arrow.css('top', top);
   }
 
-  function hendlers() {
+  function Handlers() {
     setTopStyle();
-    if ( !config.touch ) $(config.adaptivElements, $_slider).attr('data-touch', "false");
+    if ( !config.touch ) $(config.adaptiveElements, $_slider).attr('data-touch', "false");
   }
 
-  $_slider.on('setPosition', hendlers);
+  $_slider.on('setPosition', Handlers);
   
   $_slider.slick({
     slidesToShow: 3,

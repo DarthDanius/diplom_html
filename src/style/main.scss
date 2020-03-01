@@ -2,7 +2,7 @@
   overflow-x: hidden;
 }
 
-.fixed-conteiner{
+.fixed-container{
   max-width: 1250px;
   margin: 0 auto;
   padding-left: 40px;
@@ -89,7 +89,7 @@
 
   &__wrap {
     position: relative;
-    padding-top: 200px;
+    padding-top: 182px;
     padding-bottom: 237px;
     @media (max-width: 1200px) {
       padding-bottom: 230px;
@@ -289,13 +289,12 @@
   &__title {
     font-size: 80px;
     font-weight: 900;
-    line-height: 59px;
+    // line-height: 59px;
     @media (max-width: 1200px) {
-      margin-top: 10px;
+      margin-top: 26px;
       font-size: 54px;
     }
     @media (max-width: 600px) {
-      font-size: 40px;
       margin-top: 16px;
       line-height: 32px;
     }
@@ -309,7 +308,11 @@
     color: $color-gray;
     font-size: 25px;
     font-weight: 400;
-    display: inline-block;
+    display: block;
+    margin-top: 14px;
+    @media (max-width: 1024px) {
+      margin-top: 20px;
+    }
     @media (max-width: 600px) {
       font-size: 18px;
     }
@@ -322,10 +325,11 @@
   }
 
   &__btn {
-    margin-top: 30px;
-  }
-  @media (max-width: 460px) {
-    align-self: center;
+    margin-top: 45px;
+    @media (max-width: 460px) {
+      align-self: center;      
+      margin-top: 25px;
+    }
   }
 }
 
@@ -341,30 +345,30 @@
       padding-top: 84px;
     }
     @media (max-width: 460px) {
-      padding-top: 43px;
+      padding-top: 42px;
       padding-bottom: 0;
     }
   }
 
   &__list {
-    margin-top: 88px;
+    margin-top: 89px;
     @media (max-width: 1200px) {
       justify-content: center;
       display: grid;
       grid-template-columns: 257px 277px;
       column-gap: 12.5%;
-      row-gap: 78px;
+      row-gap: 81px;
     }
     @media (max-width: 700px) {
       grid-template-columns: 277px;
       margin-top: 44px;
-      row-gap: 50px;
+      row-gap: 51px;
     }
 
   }
 
   &__btn {
-    margin-top: 90px;
+    margin-top: 92px;
     @media (max-width: 1024px) {
       margin-top: 93px;
     }
@@ -379,7 +383,7 @@
 .section-mywork {
 
   &__wrap {
-    padding-top: 95px;
+    padding-top: 94px;
     padding-bottom: 102px;
     padding-left: 0;
     padding-right: 0;
@@ -394,12 +398,12 @@
     margin-left: auto;
     margin-right: auto;
     padding: 0 10px;
-    margin-top: 85px;
+    margin-top: 86px;
     font-weight: 500;
     font-size: 20px;
     color: $color-gray;
     @media (max-width: 1024px) {
-      margin-top: 84px;
+      margin-top: 85px;
       font-size: 25px;
     }
     @media (max-width: 460px) {
@@ -427,12 +431,12 @@
   }
 
   &__btn {
-    margin-top: 79px;
+    margin-top: 82px;
     @media (max-width: 1024px) {
       margin-top: 70px;
     }
     @media (max-width: 460px) {
-      margin-top: 19px;
+      margin-top: 21px;
     }
   }
 }
@@ -586,15 +590,15 @@
   }
 
   &__nav {
-    margin-top: 4px;
+    margin-top: 6px;
     @media (max-width: 540px) {
       font-size: 15px;
     }
   }
 
   &__contacts {
-    padding-left: 95px;
-    margin-top: 4px;
+    padding-left: 93px;
+    margin-top: 6px;
     @media (max-width: 1024px) {
       padding-left: 54px;
     }
@@ -603,7 +607,7 @@
       padding-left: 0;
     }
     @media (max-width: 460px) {
-      margin-top: 42px;
+      margin-top: 43px;
     }
   }
 
