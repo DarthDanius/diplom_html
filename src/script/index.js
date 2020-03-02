@@ -3,6 +3,7 @@
 // import 'babel-polyfill';
 import '../style/index.scss'
 import '../modules/cap'
+import {toggleHideScroll} from './toggleHideScroll.js'
 import {Validator} from './validator.js'
 import 'jquery.maskedinput/src/jquery.maskedinput.js'
 import 'slick-carousel/slick/slick.min.js'
@@ -87,15 +88,19 @@ document.addEventListener('DOMContentLoaded', () => {
       if ( !attributes || attributes.length === 0) return;// бессмысленная проверка
       attributes = new Set(attributes);// еще одна бессмысленная проверка. Так, на всякий
 
+      toggleHideScroll();
+
       const $_blackout = $('<div class="blackout-container">').on( 'click', function(e) {
         if (e.target !== e.currentTarget) return false;
         e.stopPropagation();
+        toggleHideScroll();
         $_blackout.remove();
       });
 
       const $_form_wrap = $('<div class="form">');
  
       const $_form = $(`<form class="form__wrap" autocomplete="on" action=${action} method="POST" >`);
+      // $_form.append('<h2>форма отправки</h2>')
       for ( let i of attributes ) {
         for ( let j of Object.entries(inputs) ) {
           if ( i === j[0] ) {
@@ -106,6 +111,21 @@ document.addEventListener('DOMContentLoaded', () => {
       const $_submit = $(`<button type="submit" class="form__btn btn_orang">${$(el).text()}</button>`);
       if ( !config.touch ) $_submit[0].dataset.touch = "false";
       $_form.append($_submit);
+
+      const $_btn_close = $(`
+      <button class="form__btn_close" type="button">
+        <svg class="form__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 288 288">
+          <g class="svg__icons">
+            <path class="fil0 str0" d="M144 288c-79,0 -144,-64 -144,-144 0,-79 65,-144 144,-144 80,0 144,65 144,144 0,80 -64,144 -144,144zm0 -11c-73,0 -133,-59 -133,-133 0,-73 60,-133 133,-133 74,0 133,60 133,133 0,74 -59,133 -133,133z"/>
+            <polygon class="fil1 str1" points="225,208 161,144 225,80 208,63 144,127 80,63 63,80 127,144 63,208 80,225 144,161 208,225 "/>
+          </g>
+        </svg>
+      </button>`).on( 'click', function(e) {
+        e.stopPropagation();
+        toggleHideScroll();
+        $_blackout.remove();
+      });
+      $_form.prepend($_btn_close);
 
       const validator = new Validator( $_form, {messageClass: 'form__message', messageAnimShowClass: 'slideDown', messageAnimHideClass: 'slideUp'} );
       $_form_wrap.append($_form)

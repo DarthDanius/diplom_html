@@ -1,5 +1,9 @@
 .content {
   overflow-x: hidden;
+
+  &_unscroll {
+    overflow-y: hidden;
+  }
 }
 
 .fixed-container{

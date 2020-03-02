@@ -1,10 +1,21 @@
+.system {
+
+  &__slidebar {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #C1C1C1;
+  }
+}
+
 .blackout-container {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   min-width: 320px;
-  height: 100vh;  
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 9;
   display: flex;
@@ -103,7 +114,7 @@
 .btn-nav {
   line-height: 1px;
   width: 45px;
-  height: 32px;
+  height: 45px;
   z-index: 4;
   display: flex;
   justify-content: center;
@@ -131,7 +142,6 @@
     transition-property: height;
     transition-duration: $time-hover;
     border-radius: 10px;
-    height: 45px;
 
     & .btn-nav__element:nth-child(1) {
       @include transition-btn-nav;
@@ -311,6 +321,7 @@
     height: 36px;
     width: 36px;
     margin-left: 19px;
+    border-radius: 5px;
 
     &_vk {
       background-position: -9px;
@@ -331,14 +342,15 @@
 
     &[data-touch="false"]:hover,
     &:active {
-      border-radius: 5px;
-      box-shadow: 0px 0px 8px 3px $color-orange-shadow;
-      @include transition-hover;
+      transition-property:filter;
+      transition-duration: $time-hover;
+      filter: brightness(0.5);
     }
   }
 }
 
 .form {
+  position: relative;
   width: 310px;
   background-color: $color-white;
   display: flex;
@@ -347,11 +359,24 @@
   align-items: center;
   font-size: 18px;
   z-index: 10;
-  border-radius: 10px;
+  border-radius: 10px 0 10px 10px;
   transition-property: height, width;
   transition-duration: $time-btn-nav;
 
+  &__btn_close {
+    width: 30px;
+    padding: 5px;
+    position: absolute;
+    top: -15px;
+    right: 0px;
+    line-height: 0;
+    border-radius: 50px;
+    background-color: $color-white;
+
+  }
+
   &__wrap {
+    width: 100%;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -366,27 +391,33 @@
   }
 
   &__input-text {
-    width: 80%;
+    font-size: 18px;
+    width: 90%;
+    height: 2em;
     border: 1px solid $color-pink;
-    height: 25px;
     margin: 5px 0;
     padding-left: 10px;
+    border-radius: 5px;
   }
 
   &__icon {
     fill: url(#linearGradient-2);
-    width: 23px;
-    height: 23px;
+    width: 15px;
   }
 
   &__btn {
-    width: 270px;
-    height: 60px;
+    width: 100%;
+    height: 50px;
     margin-top: 20px;
     align-self: center;
+    border-radius: 5px;
     @media (max-width: 1200px) {
-      width: 270px;
-      height: 60px;
+      width: 100%;
+      height: 50px;
+    }
+    @media (max-width: 460px) {
+      width: 100%;
+      height: 50px;
     }
   }
 
