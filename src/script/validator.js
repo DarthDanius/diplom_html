@@ -36,6 +36,7 @@ export class Validator{// use jquery.maskedinput.js => jquery 3.4.x
 
     this.defaultOptions = {
       // onValidate: null,
+      parentClass: '',
       messageElement: 'span',
       messageClass: 'message',
       messageAnimShowClass:'',
@@ -69,7 +70,7 @@ export class Validator{// use jquery.maskedinput.js => jquery 3.4.x
 
     this.options = (options) ? Object.assign(this.defaultOptions, options) : this.defaultOptions;
 
-    this.metods = {
+    this.methods = {
       required: function( field, value = true, message = 'пустое поле', parent){
         let valid = Boolean( field.element.value.trim() );
         if (!valid) {
@@ -96,21 +97,27 @@ export class Validator{// use jquery.maskedinput.js => jquery 3.4.x
 
     let fieldsSort = [];
     for ( let field of this.fields ) {
-      let metodExist = false;
+      let methodExist = false;
       for ( let setOfRules of Object.entries(this.options.rules) ) {
         if ( field.element.getAttribute('name') === setOfRules[0] ) {
-          metodExist = true;
+          methodExist = true;
           if ( setOfRules[1].pattern && setOfRules[1].pattern.mask ) {
             $(field.element).mask(setOfRules[1].pattern.mask);
             field.element.addEventListener('blur', (e) => {field.change = true} );// на маскированном эл-те не работает событие 'change'
           }
         }
       }
-      if (metodExist) {
+      if (methodExist) {
         fieldsSort.push(field);
         field.message = $(`<${this.options.messageElement}>`);
         field.message.addClass(this.options.messageClass);
-        field.message.insertAfter(field.element);
+        if ( this.options.parentClass ) {
+          console.log(this.options.parentClass);
+          let parent = $(field.element).parent(`.${this.options.parentClass}`);
+          (parent) ? field.message.insertAfter(parent) : field.message.insertAfter(field.element);
+        } else {
+          field.message.insertAfter(field.element);
+        }
         field.element.addEventListener('blur', (e) => this.validate([field]) );
         field.element.addEventListener('change', (e) => {
           field.change = true
@@ -166,14 +173,14 @@ export class Validator{// use jquery.maskedinput.js => jquery 3.4.x
       if ( field.change === false && field.valid !== null ) break;
 
       for ( let setOfRules of Object.entries(this.options.rules) ) {// setOfRules = [ "name", {rules} ]
-        if ( field.element.getAttribute('name') === setOfRules[0] ) {// если есть именованный набор правил сопостовимый с атрибутом 'name'
+        if ( field.element.getAttribute('name') === setOfRules[0] ) {// если есть именованный набор правил сопоставимый с атрибутом 'name'
           let rules = Object.entries(setOfRules[1]);// rules = [ [rule], rule] ]
 
           for ( let rule of rules ) {// rule = ["required", true] or ["pattern", {…}]  // применение методов
           if (invalid) break;
-            if ( this.metods[rule[0]]) {// если есть соответствующее правило в this.metods
+            if ( this.methods[rule[0]]) {// если есть соответствующее правило в this.methods
               if ( typeof rule[1] === 'boolean' ) rule[1] = {value: rule[1]};// если в опциях правило записано кратко - привести в соответствие
-              if ( this.metods[rule[0]]( field, rule[1].value, rule[1].message, this ) ) {// если правило валидно
+              if ( this.methods[rule[0]]( field, rule[1].value, rule[1].message, this ) ) {// если правило валидно
                 field.valid = true;
                 field.change = false;
               } else {// если правило не валидно
@@ -189,8 +196,8 @@ export class Validator{// use jquery.maskedinput.js => jquery 3.4.x
         }
       }
     }
-    let allvalids = this.fields.map( (el, i) => el.valid );
-    // console.log( allvalids );
-    return allvalids.every( (i) => i===true );
+    let allValid = this.fields.map( (el, i) => el.valid );
+    // console.log( allValid );
+    return allValid.every( (i) => i===true );
   }
 }
