@@ -23,6 +23,7 @@ $time-btn-nav: 200ms;
     content: "";
     height: 2px;
     width: 0%;
+    margin-top: 2px;
     background-color: $color-pink;
     transition-property: width;
     transition-timing-function: ease-in-out;
@@ -37,8 +38,8 @@ $time-btn-nav: 200ms;
 }
 
 @mixin transition-message {
-  transition-property: margin, height, opacity;
-  transition-duration: 250ms;
+  transition-property: margin, height, line-height, opacity;
+  transition-duration: $time-slide;
 }
 
 @mixin transition-btn-nav {
