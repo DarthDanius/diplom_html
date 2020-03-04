@@ -112,7 +112,6 @@ export class Validator{// use jquery.maskedinput.js => jquery 3.4.x
         field.message = $(`<${this.options.messageElement}>`);
         field.message.addClass(this.options.messageClass);
         if ( this.options.parentClass ) {
-          console.log(this.options.parentClass);
           let parent = $(field.element).parent(`.${this.options.parentClass}`);
           (parent) ? field.message.insertAfter(parent) : field.message.insertAfter(field.element);
         } else {

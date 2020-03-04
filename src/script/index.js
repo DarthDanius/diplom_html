@@ -16,6 +16,23 @@ document.addEventListener('DOMContentLoaded', () => {
   config.touch = ( ('ontouchstart' in window || ( window.DocumentTouch && document instanceof DocumentTouch) ) ) ? true : false;
   config.adaptiveElements = 'button, a';
 
+  function setEventDelay(e, f, ms) { // задержка для функции
+    let timer
+    return function(e) {
+      if (!timer) {
+        timer = setTimeout(
+          function() {
+            clearTimeout(timer)
+            timer = null
+            f(e)
+          },
+          ms,
+          e
+        )
+      }
+    }
+  }
+
   function settDelay(response, ms) {
     return new Promise((resolve) => {
       setTimeout( (r) => resolve(r), ms, response);
@@ -91,6 +108,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       toggleHideScroll();
 
+
+
       const $_blackout = $('<div class="blackout-container">').on( 'click', function(e) {
         if (e.target !== e.currentTarget) return false;
         e.stopPropagation();
@@ -139,6 +158,20 @@ document.addEventListener('DOMContentLoaded', () => {
       $_blackout.append($_form_wrap);
       $('body').append($_blackout);
 
+      function setOverflow(el) {
+        if (!el) return;
+        let clientHeight = document.documentElement.clientHeight;
+        let elementHeight = el.clientHeight + +getComputedStyle(el).marginTop.slice(0, -2);
+        if ( elementHeight >= clientHeight ) {
+          $_blackout.addClass('blackout-container_overflow');
+        } else {
+          $_blackout.removeClass('blackout-container_overflow');
+        }
+      }
+      setOverflow($_form[0]);
+      const resizeInit = setEventDelay(null, ()=>setOverflow($_form[0]), 500)// замыкание метода с таймером
+      window.addEventListener('resize', (e) => resizeInit(e), false)
+
       $_submit.click((e) => {
         e.preventDefault();
         if ( validator.validate() ) {
@@ -164,21 +197,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const inputs = {
     name: {
-      input: $('<input class="form__input-text form__input-text_name" type="text" id="name" name="name" placeholder="имя">'),
+      input: $('<input class="form__input-text form__input-text_name" type="text" id="name" name="name" placeholder="Введите имя">'),
       // label: $('<label class="form__label" for="name">имя</label>'),
       icon: $('<svg class="form__icon form__icon_name" viewBox="0 0 96 98" aria-hidden="true" focusable="false"><use xlink:href="img/icons.svg#icon-user"></use></svg>'),
       title: $('<h2 class="form__title">имя:</h2>')
     },
 
     email: {
-      input: $('<input class="form__input-text form__input-text_email" type="email" id="email" name="email" placeholder="e-mail">'),
+      input: $('<input class="form__input-text form__input-text_email" type="email" id="email" name="email" placeholder="Введите e-mail">'),
       // label: $('<label class="form__label" for="email">e-mail</label>'),
       icon: $('<svg class="form__icon form__icon_mail" viewBox="0 0 63 41" aria-hidden="true" focusable="false"><use xlink:href="img/icons.svg#icon-mail"></use></svg>'),
       title: $('<h2 class="form__title">e-mail:</h2>')
     },
 
     phone: {
-      input: $('<input class="form__input-text form__input-text_phone" type="tel" id="phone" name="phone" placeholder="телефон">'),
+      input: $('<input class="form__input-text form__input-text_phone" type="tel" id="phone" name="phone" placeholder="Введите телефон">'),
       // label: $('<label class="form__label" for="phone">телефон</label>'),
       icon: $('<svg class="form__icon form__icon_phone" viewBox="0 0 43 43" aria-hidden="true" focusable="false"><use xlink:href="img/icons.svg#icon-phone"></use></svg>'),
       title: $('<h2 class="form__title">телефон:</h2>')
