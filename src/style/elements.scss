@@ -390,7 +390,6 @@
       background-color: rgba(255, 47, 150, .5);
       @include transition-hover;
     }
-
   }
 
   &__wrap {
@@ -469,7 +468,7 @@
   }
 
   &__response {
-    margin: 50px auto;
+    // margin: 50px auto;
     color: $color-orange;
   }
 
@@ -500,6 +499,15 @@
     line-height: 1.6;
     opacity: 1;
     @include transition-message;
+  }
+
+  &_response {
+    border-radius: 10px 10px 10px 10px;
+
+    .form__wrap {
+      justify-content: center;
+      align-items: center;
+    } 
   }
 }
 

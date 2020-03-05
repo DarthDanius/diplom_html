@@ -4,9 +4,9 @@ use PHPMailer\PHPMailer\Exception;
 
 
 
-require $_SERVER['DOCUMENT_ROOT'] . '/modules/PHPMailer/Exception.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/modules/PHPMailer/PHPMailer.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/modules/PHPMailer/SMTP.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/libs/PHPMailer/Exception.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/libs/PHPMailer/PHPMailer.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/libs/PHPMailer/SMTP.php';
 
 $user_name = $_POST['name'];
 $user_phone = $_POST['phone'];

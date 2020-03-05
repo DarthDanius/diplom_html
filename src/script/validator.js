@@ -12,7 +12,7 @@ export class Validator{// use jquery.maskedinput.js => jquery 3.4.x
     this.fields = []
     this.submit = null;
 
-    if ( el.jquery === undefined) el = $(el );
+    if ( el.jquery === undefined) el = $(el);
     if ( el[0].tagName.match(/(input|form|textarea)/i) ) {
       this.target = el;
       this.targetTag = el[0].tagName.toLowerCase();

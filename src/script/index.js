@@ -175,7 +175,8 @@ document.addEventListener('DOMContentLoaded', () => {
       $_submit.click((e) => {
         e.preventDefault();
         if ( validator.validate() ) {
-          $_form_wrap.html('<img src="img/ajax-loader.svg">');
+          $_form_wrap.addClass('form_response');
+          $_form_wrap.html('<div class="form__wrap"><img src="img/ajax-loader.svg"></div>');
           let options =  {
             method: 'POST',
             body:  new FormData($_form[0])
@@ -183,10 +184,10 @@ document.addEventListener('DOMContentLoaded', () => {
           fetch(action, options)
           .then( (r)=> {
             // console.log(r);
-            if (r.ok) {
-              r.text().then( r => $_form_wrap.html(`<div class="form"><h3 class="form__response">${r}</h3></div>`) )
+            if (r.ok) {              
+              r.text().then( r => $_form_wrap.html(`<div class="form__wrap"><h3 class="form__response">${r}</h3></div>`) )
             } else {
-              $_form_wrap.html(`<div class="form"><h3 class="form__response">Ошибка !</h3></div>`);
+              $_form_wrap.html(`<div class="form__wrap"><h3 class="form__response">Ошибка !</h3></div>`);
             }
           })
         }
