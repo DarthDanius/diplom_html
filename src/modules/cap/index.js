@@ -1,45 +1,47 @@
 function cap (){
+  let styleImg = 'style="border: none; width: 75px; height: 75px"';
   let cap = `
-    <div style='border: 1px solid #F7941D; background: #FEEFDA; text-align: center; clear: both; height: 75px; position: relative;'>
-        <div style='position: absolute; right: 3px; top: 3px; font-family: courier new; font-weight: bold;'>
-            <a href='#' onclick='javascript:this.parentNode.parentNode.style.display="none"; return false;'>
-                <img src='/ie_check/img//ie6nomore-cornerx.jpg' style='border: none;' alt='Close this notice' />
+    <div id="capOldBrowser" style="border: 1px solid #F7941D; background: #FEEFDA; text-align: center; clear: both; height: 75px; position: relative;">
+        <div style="position: absolute; right: 0; top: 0; font-family: courier new; font-weight: bold; line-height: 0">
+            <a id="capClose" href="" style="line-height: 0;">
+                <img src="img/close.png" ${styleImg} alt="Close this notice" />
             </a>
         </div>
-        <div style='width: 640px; margin: 0 auto; text-align: left; padding: 0; overflow: hidden; color: black;'>
-            <div style='width: 75px; float: left;'>
-                <img src='/ie_check/img//ie6nomore-warning.jpg' alt='Warning!' />
+        <div style="width: 640px; margin: 0 auto; text-align: left; padding: 0; overflow: hidden; color: black; line-height: 0">
+            <div style="float: left; margin-right: 10px">
+                <img src="img/warning.png" ${styleImg} alt="Warning!"/>
             </div>
-            <div style='width: 275px; float: left; font-family: Arial, sans-serif;'>
-                <div style='font-size: 14px; font-weight: bold; margin-top: 12px;'>Вы используете устаревший браузер</div>
-                <div style='font-size: 12px; margin-top: 6px; line-height: 12px;'>Для полноценной работы, пожалуйста, воспользуйтесь любым современным браузером.</div>
+            <div style="float: left; font-family: Arial, sans-serif; line-height: 1.4; width: 265px;">
+                <div style="font-size: 14px; font-weight: bold;">Вы используете устаревший браузер</div>
+                <div style="font-size: 12px; margin-top: 6px;">Для полноценной работы, пожалуйста, воспользуйтесь любым современным браузером.</div>
             </div>
-            <div style='width: 75px; float: left;'>
-                <a href='http://www.firefox.com' target='_blank'>
-                <img src='/ie_check/img//ie6nomore-firefox.jpg' style='border: none;' alt='Get Firefox 3.5' /></a>
+            <div style="float: left;">
+                <a href="https://www.mozilla.org/ru/firefox/new/" target="_blank" style="line-height: 0;">
+                <img src="img/firefox.png" ${styleImg} alt="Get Firefox" /></a>
             </div>
-            <div style='width: 75px; float: left;'>
-                <a href='http://www.browserforthebetter.com/download.html' target='_blank'>
-                <img src='/ie_check/img//ie6nomore-ie8.jpg' style='border: none;' alt='Get Internet Explorer 8' /></a>
-            </div>
-            <div style='width: 73px; float: left;'>
-                <a href='http://www.apple.com/safari/download/' target='_blank'>
-                    <img src='/ie_check/img//ie6nomore-safari.jpg' style='border: none;' alt='Get Safari 4' />
+            <div style="float: left;">
+                <a href="https://www.opera.com/ru" target="_blank" style="line-height: 0;">
+                    <img src="img/opera.png" ${styleImg} alt="Get Opera" />
                 </a>
             </div>
-            <div style='float: left;'>
-                <a href='http://www.google.com/chrome' target='_blank'>
-                    <img src='/ie_check/img//ie6nomore-chrome.jpg' style='border: none;' alt='Get Google Chrome' />
+            <div style="float: left;">
+                <a href="https://www.google.com/intl/ru_ru/chrome/" target="_blank" style="line-height: 0;">
+                    <img src="img/chrome.png" ${styleImg} alt="Get Google Chrome" />
                 </a>
             </div>
         </div>
     </div>
   `;
 
-  if ( !window.CSS || !window.CSS.supports || !CSS.supports(`(display: grid) or (display-style: -ms-grid)`) ) {
+    if ( !window.CSS || !window.CSS.supports || !CSS.supports(`(display: grid) or (display-style: -ms-grid)`) ) {
       console.log(true);
-    $('body').prepend($(cap));
-  };
+      $('body').prepend($(cap));
+      $('#capClose').click(()=>{
+        $('#capOldBrowser').remove();
+        return false;
+      })
+    };
+ 
 }
 
 document.addEventListener('DOMContentLoaded', cap);

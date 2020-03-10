@@ -9,7 +9,8 @@ console.log(path.normalize(webpackConfigBase.externals.paths.dist));
 
 const webpackConfigDev = merge(webpackConfigBase, {
 
-	mode: 'development',
+	// mode: 'development',
+	mode: 'production',
 
 	devServer: {
 		port: 8080,

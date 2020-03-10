@@ -264,7 +264,9 @@
   }
 
   &__icon {
-    fill: url(#linearGradient-2);
+    stroke: url(#linearGradient-2);
+    fill: none;
+    stroke-width: 4%;
     @media (max-width: 460px) {
       height: auto;
     }
@@ -285,6 +287,7 @@
   }
   
   &__text {
+    width: 100%;
     font-size: 20px;
     color: $color-gray;
     margin-top: 15px;
@@ -612,8 +615,6 @@
         background-color: rgba(255,78,46, .5);
         @include transition-hover;
       }
-
-
     }
 
     & .slick-active button {

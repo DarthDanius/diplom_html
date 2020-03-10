@@ -58,9 +58,8 @@ function pushAfterObject(obj, key, value, options = {}){
   result.parent[result.key].splice(result.index +1, 0, options);
 }
 
-searchObjToValue( webpackConfigBase.module.rules, 'loader', 'babel-loader').options = {presets: ['@babel/preset-env']};
-searchObjToValue( webpackConfigBase.module.rules, 'loader', 'css-loader').options = {'url': false, 'importLoaders': 5};
-// pushAfterObject( webpackConfigBase.module, 'loader', 'style-loader', {loader: MiniCssExtractPlugin.loader, options: {publicPath: '../'}});
+// searchObjToValue( webpackConfigBase.module.rules, 'loader', 'babel-loader').options = {presets: ['@babel/preset-env']};
+// searchObjToValue( webpackConfigBase.module.rules, 'loader', 'css-loader').options = {'url': false, 'importLoaders': 5};
 pushAfterObject( webpackConfigBase.module, 'loader', 'style-loader', {loader: MiniCssExtractPlugin.loader, options: {publicPath: '../'}});
 
 const webpackConfigBuild = merge(webpackConfigBase, {
@@ -73,6 +72,13 @@ const webpackConfigBuild = merge(webpackConfigBase, {
 
   plugins: [
 
+    new CopyWebpackPlugin([
+      { from: webpackConfigBase.externals.paths.src + '/libs', to: `libs` },
+      { from: webpackConfigBase.externals.paths.src + '/img', to: `img` },
+      { from: webpackConfigBase.externals.paths.src + '/modules/cap/img', to: `img` },
+      { from: webpackConfigBase.externals.paths.src + '/favicon', to: `favicon` },
+      { from: webpackConfigBase.externals.paths.src + '/fonts', to: `fonts` },
+      ]),
     new MiniCssExtractPlugin({
       filename: `style/[name].css`,
     }),

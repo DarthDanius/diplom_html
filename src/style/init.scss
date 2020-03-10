@@ -17,6 +17,14 @@ a {
   color: inherit;
   display: inline-block;
   cursor: pointer;
+
+  &:active,
+  &:focus {
+    outline: none !important;;
+  }
+  &::-moz-focus-inner {
+    border: 0px !important;;
+  }
 }
 
 li {
@@ -35,4 +43,12 @@ button {
   box-shadow: none;
   outline: none;
   cursor: pointer;
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+  &::-moz-focus-inner {
+    border: 0;
+  }
 }
